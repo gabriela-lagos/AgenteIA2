@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,14 +19,17 @@ public class Main {
 
         for (AgenteIA agenteIA : orquestrador) {
             for (int i = 0; i < prompts.length; i++) {
-                try {
                 System.out.println("Processando Req #" + (i + 1) + "...");
-                agente.processarPrompt(prompts[i]);
+                try {
+                
+                agenteIA.processarRequisicao(prompts[i]);
                 
                 } catch (PromptInadequadoException e) {
                 imprimirLog("SEGURANÇA", e.getMessage());
+                
                 } catch (FalhaProcessamentoAgenteException e) {
                 imprimirLog("DOMÍNIO", e.getMessage() + " | Timestamp: " + e.getTimestamp());
+                
                 } catch (ErroComunicacaoIAException e) {
                 imprimirLog("INFRA", e.getMessage());
                 }
