@@ -7,8 +7,11 @@ public AgenteImagem(String nome){
     }
     
     @Override
-    public void processarRequisicao(String input){
-        
+    public void processarRequisicao(String prompt)
+            throws FalhaProcessamentoAgenteException,
+                   PromptInadequadoException,
+                   ErroComunicacaoIAException {
+    
         String normalizado = prompt.toLowerCase();
         if (normalizado.contains("hackear") || normalizado.contains("roubar")) {
             throw new PromptInadequadoException("O prompt contém termos proibidos relacionados à segurança.");
