@@ -7,16 +7,18 @@ public AgenteImagem(String nome){
     }
     
     @Override
-    public void processarRequisicao(String prompt)
+    public void processarRequisicao(String input)
             throws FalhaProcessamentoAgenteException,
                    PromptInadequadoException,
                    ErroComunicacaoIAException {
     
-        String normalizado = prompt.toLowerCase();
+        String normalizado = input.toLowerCase();
         if (normalizado.contains("hackear") || normalizado.contains("roubar")) {
             throw new PromptInadequadoException("O prompt contém termos proibidos relacionados à segurança.");
         }
+        ModuloConexao.validarLink();
         super.conectarServidor();
+        System.out.println("Agente de Imagem ["+this.nome+"] processando requisição para: ["+input+"]");
     }
 
 }

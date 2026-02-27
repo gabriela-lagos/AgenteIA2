@@ -10,17 +10,18 @@ public abstract class AgenteIA {
     public String getNome(){
         return nome;
     }
-    
-    public abstract void processarRequisicao(String input) 
-        throws FalhaProcessamentoAgenteException, PromptInadequadoException, ErroComunicacaoIAException;
 
-    
     public void conectarServidor()throws ErroComunicacaoIAException{
         if (Math.random() > 0.7) { // 30% de chance de falha
             throw new ErroComunicacaoIAException("Falha na conexão com o cluster de GPUs (Timeout).");
         }
-        System.out.println("Servidor conectado");
-
-    }
+    System.out.println("Servidor conectado");
 
 }
+    
+    public abstract void processarRequisicao(String input) 
+        throws FalhaProcessamentoAgenteException, PromptInadequadoException, ErroComunicacaoIAException;
+
+
+
+    }

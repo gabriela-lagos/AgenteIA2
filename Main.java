@@ -14,8 +14,8 @@ public class Main {
         };
 
         List<AgenteIA> orquestrador = new ArrayList<>();
-        orquestrador.add(new AgenteTexto(nome: "Agente chat#1"));
-        orquestrador.add(new AgenteTexto(nome: "Agente chat#2"));
+        orquestrador.add(new AgenteTexto("Agente chat#1"));
+        orquestrador.add(new AgenteImagem("Agente chat#2"));
 
         for (AgenteIA agenteIA : orquestrador) {
             for (int i = 0; i < prompts.length; i++) {
@@ -36,7 +36,7 @@ public class Main {
                 System.out.println("-----------------------------------");
             }
     }
-
+}
     private static void imprimirLog(String nivel, String mensagem) {
         String hora = java.time.LocalTime.now().toString().substring(0, 8);
         System.err.println("[LOG-AGENTE] [" + hora + "] [" + nivel + "] Erro: " + mensagem);
