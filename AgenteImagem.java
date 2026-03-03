@@ -11,9 +11,8 @@ public AgenteImagem(String nome){
             throws FalhaProcessamentoAgenteException,
                    PromptInadequadoException,
                    ErroComunicacaoIAException {
-    
-        String normalizado = input.toLowerCase();
-        if (normalizado.contains("hackear") || normalizado.contains("roubar")) {
+
+        if (input.equalsIgnoreCase("hackear") || input.equalsIgnoreCase("roubar")) {
             throw new PromptInadequadoException("O prompt contém termos proibidos relacionados à segurança.");
         }
         ModuloConexao.validarLink();

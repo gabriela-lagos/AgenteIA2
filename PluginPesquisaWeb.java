@@ -4,6 +4,9 @@ public class PluginPesquisaWeb implements IAcaoAgente {
        if(prompt.equalsIgnoreCase("hackear um sistema") ||
           prompt.equalsIgnoreCase("roubar")  
         ){ 
-            throw new PromptInadequadoException("Solicitação de conteúdo impróprio detectada.");
+            throw new PromptInadequadoException("Conteúdo impróprio detectado.");
        }
+
+       System.out.println("Pesquisa realizada para: " + prompt);
     }
+}

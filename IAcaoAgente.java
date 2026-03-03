@@ -1,2 +1,3 @@
 public interface IAcaoAgente {
-    void processarRequisicao(String prompt) throws 
+    void processarRequisicao(String prompt) throws PromptInadequadoException;
+}
