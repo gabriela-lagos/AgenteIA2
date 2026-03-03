@@ -6,6 +6,10 @@ public abstract class AgenteIA {
         this.nome = nome;
 
     }
+    
+    public void usarHabilidade(IAcaoAgente ferramenta, String comando) throws Exception {
+        ferramenta.processarRequisicao(comando);
+    }
 
     public String getNome(){
         return nome;
