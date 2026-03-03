@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class DashboardAgente {
 
     public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class Main {
                 System.out.println("Processando Req #" + (i + 1) + "...");
                 try {
                 
-                agenteIA.processarRequisicao(prompts[i]);
+                    agenteIA.processarRequisicao(prompts[i]);
                 
                 } catch (PromptInadequadoException e) {
                 imprimirLog("SEGURANÇA", e.getMessage());
